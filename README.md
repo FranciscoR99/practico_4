@@ -5,3 +5,5 @@ integrantes:
 Francisco Rivero
 
 Emanuel ramirez
+
+Lucas Olivares
