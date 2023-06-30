@@ -1,7 +1,7 @@
 class Sistema_votos{
-    partidos_politicos:partido[];
+    partidos_politicos:Partido[];
 }
-Class Personas {
+class Personas {
     nombres: string;
     apellidos: string;
     dni: number;
@@ -9,25 +9,26 @@ Class Personas {
     f_nac: Date;
     
     constructor(nombre:string, apellido:string, dni:number ,direccion:string, f_nac:Date){
-        nombre.this = nombre;
-        apellido.this = apellido;
-        dni.this = dni;
-        direccion.this = direccion;
-        f_nac.this = f_nac;
+        this.nombres = nombre;
+        this.apellidos = apellido;
+        this.dni = dni;
+        this.direccion = direccion;
+        this.f_nac = f_nac;
     }
 }
 
 class Candidatos extends Personas{
     partidoPolitico:string
-    constructor(nombre:string,apellido:string,dni:number,direccion:string,f_nac:date){
+    constructor(nombre:string,apellido:string,dni:number,direccion:string,f_nac:Date){
         super(nombre,apellido,dni,direccion,f_nac)
     }
 }
-class Partido{    
+class Partido extends Candidatos{    
     nombre: string;
     afiliados: string;
-    constructor(nombre:string,afiliados:string){
+    constructor(nombre:string,afiliados:string, partidoPolitico:string){
         super(partidoPolitico)
+    }
     
 }
 class Partidos{}
