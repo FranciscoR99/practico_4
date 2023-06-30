@@ -17,20 +17,34 @@ class Personas {
     }
 }
 
-class Candidatos extends Personas{
-    partidoPolitico:string
-    constructor(nombre:string,apellido:string,dni:number,direccion:string,f_nac:Date){
-        super(nombre,apellido,dni,direccion,f_nac)
+class Candidatos extends Personas {
+    partidoPolitico: string;
+    partido: Partido | null;
+
+    constructor(nombre: string, apellido: string, dni: number, direccion: string, f_nac: Date, partidoPolitico: string) {
+        super(nombre, apellido, dni, direccion, f_nac);
+        this.partidoPolitico = partidoPolitico;
+        this.partido = null;
+    }
+
+    crearPartido(nombre: string, afiliados: string) {
+        this.partido = new Partido(nombre, afiliados, this.partidoPolitico);
     }
 }
-class Partido extends Candidatos{    
+
+class Partido {
     nombre: string;
     afiliados: string;
-    constructor(nombre:string,afiliados:string, partidoPolitico:string){
-        super(partidoPolitico)
+
+    constructor(nombre: string, afiliados: string, partidoPolitico: string) {
+        this.nombre = nombre;
+        this.afiliados = afiliados;
     }
-    
 }
+
+    
+    
+
 class Partidos{}
 class Listas{}
 class Votantes{}
