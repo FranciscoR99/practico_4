@@ -31,7 +31,17 @@ class Candidatos extends Personas {
         this.partido = new Partido(nombre, afiliados, this.partidoPolitico);
     }
 }
-
+ class Votantes extends Personas{
+    constructor(nombre, apellido, dni, direccion, f_nac){
+        super(nombre, apellido, dni, direccion, f_nac)
+    }
+ }
+class Voto{
+    voto: Votantes
+    votar(){
+        return console.log(this.voto)
+    }
+}
 class Partido {
     nombre: string;
     afiliados: string;
@@ -42,9 +52,9 @@ class Partido {
     }
 }
 
+class Listas{
+    puesto: string 
+    postulante: Candidatos
     
-    
+}
 
-class Partidos{}
-class Listas{}
-class Votantes{}
